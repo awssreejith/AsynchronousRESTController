@@ -24,7 +24,7 @@ public class asyncController {
         return ResponseEntity.status(HttpStatus.OK).body(emp2);
     }
 
-    //http://localhost:8080/ageCalculator?name=somename
+    //http://localhost:8080/ageCalculator?name=SomeNameYouEnter
     @GetMapping("/ageCalculator")
     public ResponseEntity<People> getAge(@RequestParam(name = "name") String name) throws ExecutionException, InterruptedException {
         CompletableFuture<People> people = pop.getAgeData(name);
